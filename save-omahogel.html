@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Build Their Forever Home — Omah Ogel Animal Sanctuary</title>
+<meta name="description" content="190+ rescued animals need a permanent home. We were given just 6 weeks to move. The land is secured. Construction has begun. Now we need your help to finish it.">
+<meta property="og:title" content="190+ Rescued Animals Need a Forever Home">
+<meta property="og:description" content="We were given just 6 weeks to relocate nearly 190 rescued dogs and cats. Help us finish building their permanent sanctuary in Indonesia.">
+<meta property="og:image" content="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934031/billy_vdjp5j_nnryil.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #FF6B35;
+  --primary-dark: #E85520;
+  --secondary: #FFB347;
+  --bg: #FFFDF9;
+  --bg-warm: #FFF5EE;
+  --dark: #1F2937;
+  --mid: #4B5563;
+  --light: #9CA3AF;
+  --accent: #16A34A;
+  --white: #FFFFFF;
+  --border: #F3E8DE;
+  --red: #E53935;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--bg); overflow-x: hidden; }
+
+/* ── STICKY CTA BAR ── */
+.sticky-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--dark); padding: 10px 20px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.sticky-bar .sb-text { font-size: 13px; color: rgba(255,255,255,0.80); font-weight: 500; }
+.sticky-bar .sb-text span { color: var(--secondary); font-weight: 700; }
+.sticky-bar .sb-btn {
+  background: var(--primary); color: white; padding: 9px 22px; border-radius: 24px;
+  font-weight: 800; font-size: 13px; text-decoration: none; white-space: nowrap;
+  transition: all 0.2s; flex-shrink: 0;
+}
+.sticky-bar .sb-btn:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; overflow: hidden; background: #0a0a0a; }
+.hero-video-wrap { position: absolute; inset: 0; z-index: 0; }
+.hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; opacity: 0.82; }
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.40) 0%, rgba(0,0,0,0.22) 40%, rgba(0,0,0,0.65) 100%);
+}
+.hero-body {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  padding: 80px 24px 72px; position: relative; z-index: 2; text-align: center;
+}
+.hero-inner { max-width: 640px; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px; background: rgba(255,179,71,0.18);
+  border: 1px solid rgba(255,179,71,0.35); border-radius: 24px; padding: 6px 16px;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--secondary); margin-bottom: 20px;
+}
+.hero-h1 { font-family: 'Poppins', sans-serif; font-size: clamp(34px, 6vw, 60px); font-weight: 900; color: white; line-height: 1.1; margin-bottom: 20px; text-shadow: 0 2px 16px rgba(0,0,0,0.4); }
+.hero-h1 .orange { color: var(--secondary); }
+.hero-h1 .red { color: #ff6b6b; }
+.hero-p { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.88); margin-bottom: 28px; text-shadow: 0 1px 6px rgba(0,0,0,0.4); }
+.hero-p strong { color: var(--secondary); }
+.hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn-gofundme {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--primary); color: white; padding: 15px 32px; border-radius: 32px;
+  font-weight: 800; font-size: 15px; text-decoration: none;
+  box-shadow: 0 6px 28px rgba(255,107,53,0.5); transition: all 0.25s;
+}
+.btn-gofundme:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,107,53,0.6); }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: white; padding: 15px 28px; border-radius: 32px;
+  font-weight: 700; font-size: 14px; text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.45); transition: all 0.25s;
+}
+.btn-ghost:hover { border-color: white; background: rgba(255,255,255,0.1); }
+.scroll-hint { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(255,255,255,0.45); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 4px; animation: bob 2s ease-in-out infinite; }
+.scroll-hint::after { content: '↓'; font-size: 16px; }
+@keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+
+/* ── URGENCY BAND ── */
+.urgency-band { background: var(--red); padding: 14px 24px; text-align: center; }
+.urgency-band p { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: white; letter-spacing: 0.5px; }
+.urgency-band span { background: rgba(255,255,255,0.2); border-radius: 4px; padding: 1px 8px; margin: 0 4px; }
+
+/* ── SECTIONS ── */
+section { padding: 72px 24px; }
+.container { max-width: 860px; margin: 0 auto; }
+.container-sm { max-width: 640px; margin: 0 auto; }
+.section-label { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 10px; }
+.section-title { font-family: 'Poppins', sans-serif; font-size: clamp(26px, 4vw, 38px); font-weight: 800; line-height: 1.25; margin-bottom: 16px; }
+.section-title .orange { color: var(--primary); }
+.section-title .red { color: var(--red); }
+.body-text { font-size: 16px; line-height: 1.85; color: var(--mid); }
+.body-text p { margin-bottom: 14px; }
+.body-text strong { color: var(--dark); }
+
+/* fade-up */
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ── SECTION 2 — CRISIS ── */
+.crisis { background: var(--dark); }
+.crisis .section-title { color: white; }
+.crisis .section-title .red { color: #ff8a80; }
+.crisis .body-text { color: rgba(255,255,255,0.80); }
+.crisis .body-text strong { color: var(--secondary); }
+.crisis-timeline { margin: 32px 0; display: flex; flex-direction: column; gap: 0; }
+.ct-item { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.ct-item:last-child { border: none; }
+.ct-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.ct-dot.red { background: rgba(229,57,53,0.25); border: 2px solid #E53935; }
+.ct-dot.yellow { background: rgba(255,179,71,0.2); border: 2px solid var(--secondary); }
+.ct-dot.green { background: rgba(22,163,74,0.2); border: 2px solid var(--accent); }
+.ct-date { font-size: 11px; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.ct-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: white; margin-bottom: 4px; }
+.ct-desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+/* ── SECTION 3 — OGEL ── */
+.ogel-section { background: var(--bg-warm); }
+.ogel-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.ogel-video { border-radius: 16px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,0,0,0.15); }
+.ogel-video video { width: 100%; display: block; }
+.quote-block { border-left: 4px solid var(--primary); padding: 16px 20px; background: white; border-radius: 0 12px 12px 0; margin: 20px 0; font-style: italic; font-size: 15px; color: var(--mid); line-height: 1.7; }
+.quote-block strong { color: var(--primary); font-style: normal; }
+
+/* ── SECTION 4 — BEFORE AFTER ── */
+.before-after { background: var(--dark); }
+.before-after .section-title { color: white; }
+.ba-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 28px 0; }
+.ba-card { border-radius: 10px; overflow: hidden; aspect-ratio: 1; }
+.ba-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.ba-card:hover img { transform: scale(1.05); }
+
+/* ── SECTION 5 — LAND SECURED ── */
+.land-section { background: var(--bg); }
+.land-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.cert-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.12); border: 3px solid var(--accent); }
+.cert-wrap img { width: 100%; display: block; }
+.checkmarks { margin-top: 24px; display: flex; flex-direction: column; gap: 12px; }
+.check-item { display: flex; align-items: center; gap: 12px; background: var(--accent-light, #DCFCE7); border-radius: 10px; padding: 12px 16px; }
+.check-item .ci-icon { font-size: 20px; }
+.check-item .ci-text { font-weight: 700; font-size: 14px; color: #14532d; }
+
+/* ── SECTION 6 — BAMBOO ── */
+.bamboo-section { background: var(--bg-warm); }
+.bamboo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
+.bamboo-img { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; }
+.bamboo-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bamboo-quote { background: var(--dark); border-radius: 14px; padding: 28px 32px; margin-top: 24px; text-align: center; }
+.bamboo-quote p { font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: white; line-height: 1.6; }
+.bamboo-quote span { color: var(--secondary); }
+
+/* ── SECTION 7 — PROGRESS ── */
+.progress-section { background: var(--dark); }
+.progress-section .section-title { color: white; }
+.progress-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; }
+.p-card { background: rgba(255,255,255,0.07); border-radius: 14px; padding: 24px; text-align: center; border: 1px solid rgba(255,255,255,0.1); }
+.p-card .p-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+.p-card .p-value { font-family: 'Poppins', sans-serif; font-size: 32px; font-weight: 800; }
+.p-card .p-sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+.p-bar-wrap { margin: 4px 0 20px; }
+.p-bar-label { display: flex; justify-content: space-between; font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 8px; }
+.p-bar-track { background: rgba(255,255,255,0.1); border-radius: 8px; height: 10px; overflow: hidden; }
+.p-bar-fill { height: 100%; border-radius: 8px; background: linear-gradient(90deg, var(--primary), var(--secondary)); }
+.construction-imgs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 20px; }
+.c-img { border-radius: 10px; overflow: hidden; aspect-ratio: 4/3; }
+.c-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ── SECTION 8 — WHAT YOUR SUPPORT BUILDS ── */
+.support-section { background: var(--bg-warm); }
+.support-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 28px 0; }
+.support-item { display: flex; gap: 14px; align-items: flex-start; background: white; border-radius: 12px; padding: 18px; border: 1px solid var(--border); transition: all 0.2s; }
+.support-item:hover { border-color: var(--primary); box-shadow: 0 4px 20px rgba(255,107,53,0.1); }
+.support-item .si-icon { font-size: 28px; flex-shrink: 0; }
+.support-item .si-title { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.support-item .si-desc { font-size: 13px; color: var(--mid); line-height: 1.55; }
+.disclaimer { background: white; border-radius: 12px; padding: 14px 18px; border-left: 4px solid var(--accent); font-size: 13px; color: var(--mid); line-height: 1.6; margin-top: 16px; }
+
+/* ── SECTION 9 — LIVE UPDATES ── */
+.updates-section { background: var(--dark); }
+.updates-section .section-title { color: white; }
+.vid-carousel { position: relative; max-width: 680px; margin: 28px auto 0; }
+.vid-stage { position: relative; border-radius: 14px; overflow: hidden; background: #111; }
+.vid-slide { display: none; }
+.vid-slide.active { display: block; }
+.vid-slide video, .vid-slide img { width: 100%; display: block; max-height: 400px; object-fit: cover; }
+.vid-caption { background: rgba(0,0,0,0.7); color: white; font-size: 13px; font-weight: 600; padding: 10px 14px; }
+.vid-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.55); border: none; color: white; font-size: 20px; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+.vid-arrow:hover { background: var(--primary); }
+.vid-arrow-left { left: 10px; }
+.vid-arrow-right { right: 10px; }
+.vid-dots { display: flex; justify-content: center; gap: 7px; margin-top: 12px; flex-wrap: wrap; }
+.vid-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.25); cursor: pointer; border: none; transition: background 0.2s; }
+.vid-dot.active { background: var(--secondary); }
+
+/* ── FINAL CTA ── */
+.final-cta { background: var(--primary); color: white; text-align: center; }
+.final-cta .section-title { color: white; }
+.final-cta .section-title span { color: var(--secondary); }
+.final-p { font-size: 16px; line-height: 1.85; color: rgba(255,255,255,0.90); max-width: 580px; margin: 0 auto 32px; }
+.final-p p { margin-bottom: 12px; }
+.final-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-big { display: inline-flex; align-items: center; gap: 10px; padding: 18px 40px; border-radius: 40px; font-weight: 800; font-size: 17px; text-decoration: none; transition: all 0.25s; }
+.btn-big.dark { background: var(--dark); color: white; box-shadow: 0 6px 24px rgba(0,0,0,0.3); }
+.btn-big.dark:hover { background: #111; transform: translateY(-2px); }
+.btn-big.white { background: white; color: var(--primary); box-shadow: 0 6px 24px rgba(0,0,0,0.15); }
+.btn-big.white:hover { opacity: 0.9; transform: translateY(-2px); }
+.trust-badges { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 28px; }
+.trust-badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); border-radius: 24px; padding: 8px 18px; font-size: 13px; font-weight: 600; }
+
+/* ── FOOTER ── */
+footer { background: var(--dark); color: white; padding: 32px 24px; text-align: center; }
+footer .f-links { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 16px; }
+footer a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; font-weight: 600; transition: color 0.2s; }
+footer a:hover { color: var(--secondary); }
+footer p { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.7; }
+
+/* ── FLOATING DONATE ── */
+.floating-donate { position: fixed; bottom: 22px; right: 22px; background: var(--primary); color: white; padding: 13px 24px; border-radius: 32px; font-weight: 800; font-size: 14px; text-decoration: none; box-shadow: 0 4px 24px rgba(255,107,53,0.45); z-index: 999; transition: all 0.2s; }
+.floating-donate:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+/* ── INLINE CTA ── */
+.inline-cta { text-align: center; margin-top: 36px; }
+.inline-cta a { display: inline-flex; align-items: center; gap: 8px; background: var(--primary); color: white; padding: 14px 32px; border-radius: 32px; font-weight: 800; font-size: 15px; text-decoration: none; box-shadow: 0 4px 20px rgba(255,107,53,0.35); transition: all 0.2s; }
+.inline-cta a:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .sticky-bar .sb-text { display: none; }
+  .ogel-inner, .land-inner { grid-template-columns: 1fr; }
+  .ba-grid { grid-template-columns: repeat(2, 1fr); }
+  .progress-cards { grid-template-columns: 1fr 1fr; }
+  .support-grid { grid-template-columns: 1fr; }
+  .construction-imgs { grid-template-columns: repeat(2, 1fr); }
+  .final-btns { flex-direction: column; align-items: center; }
+  section { padding: 56px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <span class="sb-text"><span>190+ animals</span> need your help right now</span>
+  <a href="https://www.gofundme.com/omahogel" target="_blank" class="sb-btn">❤️ Donate on GoFundMe</a>
+</div>
+
+<!-- ═══ SECTION 1 — HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline id="heroVid">
+      <source src="https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/w_1280/v1781156838/lv_0_20260611121635_xhzlce.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-body">
+    <div class="hero-inner fade-up">
+      <div class="hero-eyebrow">🐾 Omah Ogel · Indonesia · Est. 2015</div>
+      <h1 class="hero-h1">
+        190+ Rescued Animals<br>Need a <span class="orange">HOME.</span>
+      </h1>
+      <p class="hero-p">
+        We were given <strong>just six weeks</strong> to relocate nearly 190 rescued animals.<br><br>
+        After 11 years of rescue work, we finally have the opportunity to build a permanent sanctuary where they can live without fear of relocation or uncertainty.<br><br>
+        For the first time, they will have a place to call <strong>HOME.</strong>
+      </p>
+      <div class="hero-btns">
+        <a href="https://www.gofundme.com/omahogel" target="_blank" class="btn-gofundme">❤️ Donate on GoFundMe</a>
+        <a href="#story" class="btn-ghost">🎬 Watch Their Story</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">scroll</div>
+</section>
+
+<!-- URGENCY BAND -->
+<div class="urgency-band">
+  <p>🚨 Construction is underway — <span>$22,734 still needed</span> to complete the permanent sanctuary</p>
+</div>
+
+<!-- ═══ SECTION 2 — THE CRISIS ═══ -->
+<section class="crisis" id="crisis">
+  <div class="container-sm">
+    <div class="fade-up">
+      <span class="section-label" style="color:var(--secondary)">📋 April 2026</span>
+      <h2 class="section-title">April 2026 <span class="red">Changed Everything</span></h2>
+      <div class="body-text">
+        <p>For more than 11 years, Omah Ogel operated from rented properties — caring for rescued dogs and cats who had nowhere else to go.</p>
+        <p>Then on <strong>April 4, 2026</strong>, everything changed.</p>
+      </div>
+
+      <div class="crisis-timeline">
+        <div class="ct-item">
+          <div class="ct-dot red">⚠️</div>
+          <div>
+            <div class="ct-date">April 4, 2026</div>
+            <div class="ct-title">The Notice Arrived</div>
+            <div class="ct-desc">Following concerns raised by nearby residents, Omah Ogel was given just six weeks to relocate nearly 190 rescued animals.</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-dot yellow">💛</div>
+          <div>
+            <div class="ct-date">The Reality</div>
+            <div class="ct-title">Leaving Them Behind Was Never an Option</div>
+            <div class="ct-desc">Many of these animals are elderly, disabled, or recovering from illness. They had already experienced abandonment once before. Amy couldn't let it happen again.</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-dot green">🏡</div>
+          <div>
+            <div class="ct-date">The Decision</div>
+            <div class="ct-title">Amy Purchased the Land Herself</div>
+            <div class="ct-desc">Using years of personal savings, Amy purchased a 1,051 m² property in Bogor Regency — before a single donation was received. For the first time, Omah Ogel has land of its own.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inline-cta">
+        <a href="https://www.gofundme.com/omahogel" target="_blank">❤️ Help Us Finish Their New Home</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — MEET OGEL ═══ -->
+<section class="ogel-section" id="story">
+  <div class="container">
+    <div class="ogel-inner">
+      <div class="fade-up">
+        <span class="section-label">🐾 The Beginning</span>
+        <h2 class="section-title">One Puppy <span class="orange">Started This Story</span></h2>
+        <div class="body-text">
+          <p>Eight years ago, Amy Sukmana found a tiny puppy alone on an empty piece of land. His mother and littermates had died from Parvovirus — one of the deadliest diseases for puppies. He was the only survivor.</p>
+          <p>The cost of treatment consumed nearly all of Amy's savings at the time. But giving up was never an option.</p>
+          <p>The puppy survived. Amy named him <strong>Ogel.</strong></p>
+        </div>
+        <div class="quote-block">
+          "That single rescue eventually grew into Omah Ogel — a sanctuary that now cares for more than <strong>190 rescued animals.</strong>"
+        </div>
+        <div class="body-text">
+          <p>Today, those same animals are waiting for a permanent place to call HOME.</p>
+        </div>
+      </div>
+      <div class="ogel-video fade-up">
+        <video autoplay muted loop playsinline>
+          <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780932449/lv_0_20260608221804_ldpkql.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — BEFORE AFTER ═══ -->
+<section class="before-after">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <span class="section-label" style="color:var(--secondary)">✨ Real Stories of Change</span>
+      <h2 class="section-title" style="color:white;">Every Animal <span class="orange">Has a Story</span></h2>
+      <p style="color:rgba(255,255,255,0.72); font-size:15px; max-width:500px; margin:0 auto;">Some arrived injured. Some arrived starving. Some were abandoned. All of them deserved a second chance.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934031/billy_vdjp5j_nnryil.jpg" alt="Billy" loading="lazy"></div>
+      <div class="ba-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934031/emily_espyo6_b8vlze.jpg" alt="Emily" loading="lazy"></div>
+      <div class="ba-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/berry_kat5uq_zactzr.jpg" alt="Berry" loading="lazy"></div>
+      <div class="ba-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/nia_vu6cqx_1_sunjul.jpg" alt="Nia" loading="lazy"></div>
+      <div class="ba-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/hiro_ld80wi_kbmuld.jpg" alt="Hiro" loading="lazy"></div>
+      <div class="ba-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/angel_pjvsa8_lggssy.jpg" alt="Angel" loading="lazy"></div>
+      <div class="ba-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/boba_wptzon_wcniol.jpg" alt="Boba" loading="lazy"></div>
+      <div class="ba-card"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934030/change_wuwija_cj1pzo.jpg" alt="Change" loading="lazy"></div>
+    </div>
+    <div class="inline-cta">
+      <a href="https://www.gofundme.com/omahogel" target="_blank">❤️ Donate on GoFundMe</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5 — LAND SECURED ═══ -->
+<section class="land-section">
+  <div class="container">
+    <div class="land-inner">
+      <div class="fade-up">
+        <div class="cert-wrap">
+          <img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780967475/IMG_20260608_200609_pf2oc2.png" alt="Land Certificate">
+        </div>
+        <p style="text-align:center; font-size:12px; color:var(--accent); font-weight:700; margin-top:8px; letter-spacing:0.5px; text-transform:uppercase;">✅ Official Land Certificate</p>
+      </div>
+      <div class="fade-up">
+        <span class="section-label">🏡 Already Done</span>
+        <h2 class="section-title">We Already Took <span class="orange">The First Step</span></h2>
+        <div class="body-text">
+          <p>Unlike many fundraising campaigns, the land has already been purchased — entirely from Amy's personal savings, before a single donation was received.</p>
+          <p>A 1,051 m² property in Bogor Regency, West Java. For the first time in Omah Ogel's history, the animals have land of their own.</p>
+        </div>
+        <div class="checkmarks">
+          <div class="check-item"><span class="ci-icon">✅</span><span class="ci-text">Land Purchased — Fully Secured</span></div>
+          <div class="check-item"><span class="ci-icon">✅</span><span class="ci-text">Land Certificate in Amy's Name</span></div>
+          <div class="check-item"><span class="ci-icon">🚧</span><span class="ci-text" style="color:#92400e;">Construction Already Underway</span></div>
+          <div class="check-item"><span class="ci-icon">❤️</span><span class="ci-text" style="color:#7f1d1d;">Your Support Helps Finish It</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6 — BAMBOO ═══ -->
+<section class="bamboo-section">
+  <div class="container-sm">
+    <div class="fade-up" style="text-align:center;">
+      <span class="section-label">🎋 Resourcefulness</span>
+      <h2 class="section-title">When Funds Were Limited, <span class="orange">An Idea Emerged</span></h2>
+      <div class="body-text" style="text-align:left;">
+        <p>With limited funds and an urgent need to relocate by mid-June 2026, we had to find a solution fast. The newly purchased land was covered with dense vegetation — and hundreds of bamboo trees.</p>
+        <p>Instead of clearing everything away, we decided to use what was already there.</p>
+        <p>Hundreds of bamboo stalks were carefully transformed into temporary shelters and perimeter fencing.</p>
+      </div>
+    </div>
+    <div class="bamboo-grid">
+      <div class="bamboo-img"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974583/IMG-20260603-WA0014_t6ogg2.jpg" alt="Bamboo construction" loading="lazy"></div>
+      <div class="bamboo-img"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974582/IMG-20260603-WA0023_imtuiy.jpg" alt="Bamboo shelter" loading="lazy"></div>
+      <div class="bamboo-img"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974581/IMG-20260603-WA0011_eyoysj.jpg" alt="Bamboo fence" loading="lazy"></div>
+      <div class="bamboo-img"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780974581/IMG-20260603-WA0013_fbqelj.jpg" alt="Bamboo hut" loading="lazy"></div>
+    </div>
+    <div class="bamboo-quote">
+      <p>It may not be the sanctuary we dream of building one day.<br>But it provides something far more important right now:<br><span>Safety, stability, and a permanent place to call HOME.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 7 — CONSTRUCTION PROGRESS ═══ -->
+<section class="progress-section">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <span class="section-label" style="color:var(--secondary)">💰 Construction Progress</span>
+      <h2 class="section-title">Help Us Finish <span style="color:var(--secondary)">What We Started</span></h2>
+      <p style="color:rgba(255,255,255,0.65); font-size:15px; max-width:520px; margin:0 auto;">The sanctuary is no longer just a plan. Construction is already underway — and every dollar brings it closer to completion.</p>
+    </div>
+    <div class="progress-cards">
+      <div class="p-card">
+        <div class="p-label">Total Budget</div>
+        <div class="p-value" style="color:var(--secondary);">$43,714</div>
+        <div class="p-sub">Rp 765,000,000</div>
+      </div>
+      <div class="p-card">
+        <div class="p-label">Raised So Far</div>
+        <div class="p-value" style="color:#86efac;">$18,485</div>
+        <div class="p-sub">Rp 323,489,500</div>
+      </div>
+      <div class="p-card">
+        <div class="p-label">Still Needed</div>
+        <div class="p-value" style="color:#f87171;">$22,734</div>
+        <div class="p-sub">Rp 397,844,000</div>
+      </div>
+    </div>
+    <div class="p-bar-wrap">
+      <div class="p-bar-label">
+        <span>Overall Progress</span>
+        <span>42% of Total Project Funded</span>
+      </div>
+      <div class="p-bar-track"><div class="p-bar-fill" style="width:42%"></div></div>
+    </div>
+    <div class="construction-imgs">
+      <div class="c-img"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934459/IMG-20260603-WA0020_gslcdx.jpg" loading="lazy"></div>
+      <div class="c-img"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934458/IMG-20260603-WA0030_asllrb.jpg" loading="lazy"></div>
+      <div class="c-img"><img src="https://res.cloudinary.com/diylz44cu/image/upload/q_auto/f_auto/v1780934458/IMG-20260603-WA0019_auroqz.jpg" loading="lazy"></div>
+    </div>
+    <div class="inline-cta" style="margin-top:28px;">
+      <a href="https://www.gofundme.com/omahogel" target="_blank">❤️ Donate on GoFundMe</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 8 — WHAT YOUR SUPPORT BUILDS ═══ -->
+<section class="support-section">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <span class="section-label">🏗️ Your Impact</span>
+      <h2 class="section-title">The Sanctuary Is <span class="orange">Not Finished Yet</span></h2>
+      <p style="color:var(--mid); font-size:15px; max-width:520px; margin:0 auto;">Your support helps complete what's already being built. Every contribution makes a visible, real difference.</p>
+    </div>
+    <div class="support-grid">
+      <div class="support-item">
+        <span class="si-icon">🏠</span>
+        <div><div class="si-title">Permanent Kennel House</div><div class="si-desc">8×12 m² staff kennel house for long-term animal care and operations</div></div>
+      </div>
+      <div class="support-item">
+        <span class="si-icon">⚡</span>
+        <div><div class="si-title">Electrical Installation</div><div class="si-desc">Lighting and power systems for the entire sanctuary</div></div>
+      </div>
+      <div class="support-item">
+        <span class="si-icon">💧</span>
+        <div><div class="si-title">Water Systems</div><div class="si-desc">2 water wells and 4 septic tanks for clean water and sanitation</div></div>
+      </div>
+      <div class="support-item">
+        <span class="si-icon">🧱</span>
+        <div><div class="si-title">Building Materials</div><div class="si-desc">Cement, bricks, and structural materials for permanent construction</div></div>
+      </div>
+      <div class="support-item">
+        <span class="si-icon">🛣️</span>
+        <div><div class="si-title">Paving & Pathways</div><div class="si-desc">Internal pathways and paving blocks for safe animal movement</div></div>
+      </div>
+      <div class="support-item">
+        <span class="si-icon">🥩</span>
+        <div><div class="si-title">Frozen Food Storage</div><div class="si-desc">Dedicated cold storage room for frozen meat and food supplies</div></div>
+      </div>
+    </div>
+    <div class="disclaimer">
+      <strong>🔍 Transparency note:</strong> The land was purchased separately using Amy's personal savings before fundraising began. All donations go directly toward construction and infrastructure.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 9 — LIVE UPDATES ═══ -->
+<section class="updates-section">
+  <div class="container">
+    <div class="fade-up" style="text-align:center;">
+      <span class="section-label" style="color:var(--secondary)">🎬 Watch It Happen</span>
+      <h2 class="section-title" style="color:white;">Watch the Sanctuary <span style="color:var(--secondary)">Take Shape</span></h2>
+      <p style="color:rgba(255,255,255,0.65); font-size:14px; max-width:480px; margin:0 auto;">Every bamboo post. Every wall. Every improvement. Documented and shared openly.</p>
+    </div>
+    <div class="vid-carousel">
+      <div class="vid-stage" id="saveVidStage">
+        <button class="vid-arrow vid-arrow-left" id="saveVidPrev">&#8592;</button>
+
+        <div class="vid-slide active">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781254558/lv_0_20260612153023_ydzbbk.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 12 Jun 2026 — Latest Progress</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781254534/lv_0_20260612153634_bzse9o.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 12 Jun 2026 — Latest Progress</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/v1781254447/lv_0_20260612154005_uvbpbx.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 12 Jun 2026 — Latest Progress</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780316351/lv_0_20260601191817_jugcub.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 01 Jun 2026 — Kennel House Progress</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1779807819/lv_0_20260526215515_n2zbbu.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 26 May 2026 — Kennel House Framing</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/dyvav3opv/video/upload/v1779260604/VID-20260516-WA0016_f7ouce.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 17 May 2026 — First Shelter Hut Completed!</div>
+        </div>
+        <div class="vid-slide">
+          <video muted loop playsinline preload="metadata"><source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780934936/VID-20260608-WA0022_n4qwqf.mp4" type="video/mp4"></video>
+          <div class="vid-caption">🎬 Day 0 — Finding The Home</div>
+        </div>
+
+        <button class="vid-arrow vid-arrow-right" id="saveVidNext">&#8594;</button>
+      </div>
+      <div class="vid-dots" id="saveVidDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 10 — FINAL CTA ═══ -->
+<section class="final-cta">
+  <div class="container-sm fade-up">
+    <span class="section-label" style="color:rgba(255,255,255,0.7)">❤️ Join the Mission</span>
+    <h2 class="section-title">Help Build Their <span>Forever HOME</span></h2>
+    <div class="final-p">
+      <p>The land is secured. Construction has begun. The animals are waiting.</p>
+      <p>Now we need your help to finish what was started.</p>
+      <p>For the first time in 11 years, more than 190 rescued animals have the opportunity to live in a permanent sanctuary of their own — a place where they will never have to fear relocation again.</p>
+      <p><strong style="color:var(--secondary);">Every contribution — large or small — makes this possible.</strong></p>
+    </div>
+    <div class="final-btns">
+      <a href="https://www.gofundme.com/omahogel" target="_blank" class="btn-big dark">❤️ Donate on GoFundMe</a>
+      <a href="https://wa.me/6287762022232" target="_blank" class="btn-big white">💬 Contact Amy</a>
+    </div>
+    <div class="trust-badges">
+      <span class="trust-badge">🏡 Land Secured</span>
+      <span class="trust-badge">🚧 Construction Underway</span>
+      <span class="trust-badge">🔍 100% Transparent</span>
+      <span class="trust-badge">❤️ 190 Animals Waiting</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-links">
+    <a href="https://en.omahogel.org" target="_blank">🌐 en.omahogel.org</a>
+    <a href="https://wa.me/6287762022232" target="_blank">📱 WhatsApp Amy</a>
+    <a href="https://www.instagram.com/amysukmana" target="_blank">📸 @amysukmana</a>
+    <a href="https://www.paypal.me/lalakarmila" target="_blank">💳 PayPal</a>
+  </div>
+  <p>📍 Bogor Regency, West Java, Indonesia · © 2026 Omah Ogel Animal Rescue & Sanctuary</p>
+  <p style="margin-top:6px;">Built with ❤️ for every animal that deserves a life worth living</p>
+</footer>
+
+<!-- FLOATING DONATE -->
+<a href="https://www.gofundme.com/omahogel" target="_blank" class="floating-donate">❤️ Donate Now</a>
+
+<script>
+// Fade-up
+(function(){
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+})();
+
+// Carousel
+function initCarousel(stageId, prevId, nextId, dotsId) {
+  const stage = document.getElementById(stageId);
+  if (!stage) return;
+  const slides = stage.querySelectorAll('.vid-slide');
+  const dotsWrap = document.getElementById(dotsId);
+  let cur = 0;
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'vid-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => { goTo(i); resetAuto(); };
+    dotsWrap.appendChild(d);
+  });
+
+  function goTo(n) {
+    const ov = slides[cur].querySelector('video');
+    if (ov) { ov.pause(); ov.currentTime = 0; }
+    dotsWrap.children[cur].classList.remove('active');
+    cur = (n + slides.length) % slides.length;
+    slides.forEach(s => s.classList.remove('active'));
+    slides[cur].classList.add('active');
+    dotsWrap.children[cur].classList.add('active');
+    const nv = slides[cur].querySelector('video');
+    if (nv) nv.play().catch(()=>{});
+  }
+
+  document.getElementById(prevId).onclick = () => { goTo(cur - 1); resetAuto(); };
+  document.getElementById(nextId).onclick = () => { goTo(cur + 1); resetAuto(); };
+
+  let timer = setInterval(() => goTo(cur + 1), 5000);
+  function resetAuto() { clearInterval(timer); timer = setInterval(() => goTo(cur + 1), 5000); }
+
+  let tx = 0;
+  stage.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+  stage.addEventListener('touchend', e => {
+    const d = tx - e.changedTouches[0].clientX;
+    if (Math.abs(d) > 40) { goTo(d > 0 ? cur + 1 : cur - 1); resetAuto(); }
+  }, {passive:true});
+
+  const fv = slides[0].querySelector('video');
+  if (fv) fv.play().catch(()=>{});
+}
+
+initCarousel('saveVidStage', 'saveVidPrev', 'saveVidNext', 'saveVidDots');
+
+// Hero video swap
+(function(){
+  const vids = [
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/w_1280/v1781156838/lv_0_20260611121635_xhzlce.mp4',
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/w_1280/v1781156904/lv_0_20260611121356_mv0mhp.mp4',
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/w_1280/v1781156978/lv_0_20260611122321_arsdas.mp4',
+    'https://res.cloudinary.com/ddcemiotz/video/upload/q_auto/f_auto/w_1280/v1781157175/lv_0_20260611123209_kmhjjm.mp4',
+  ];
+  let i = 0;
+  const v = document.getElementById('heroVid');
+  if (!v) return;
+  v.addEventListener('ended', () => {
+    i = (i + 1) % vids.length;
+    v.src = vids[i];
+    v.play().catch(()=>{});
+  });
+})();
+</script>
+</body>
+</html>
