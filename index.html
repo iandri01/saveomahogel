@@ -114,16 +114,15 @@ section { padding: 72px 24px; }
 .crisis .section-title .red { color: #ff8a80; }
 .crisis .body-text { color: rgba(255,255,255,0.80); }
 .crisis .body-text strong { color: var(--secondary); }
-.crisis-intro-wrap { display: flex; flex-direction: column; gap: 24px; margin: 24px 0; }
-.crisis-intro-wrap .crisis-video { order: 1; }
-.crisis-intro-wrap .crisis-intro-text { order: 2; }
+.crisis-content-wrap { display: flex; flex-direction: column; gap: 24px; margin: 24px 0; }
 .crisis-video { border-radius: 16px; overflow: hidden; }
 .crisis-video video { width: 100%; height: auto; display: block; border-radius: 16px; }
-@media (max-width: 767px) {
-  .crisis-intro-wrap { flex-direction: row; align-items: flex-start; gap: 16px; }
-  .crisis-intro-wrap .crisis-video { order: 1; flex: 0 0 40%; }
-  .crisis-intro-wrap .crisis-intro-text { order: 2; flex: 1 1 60%; }
-  .crisis-intro-wrap .crisis-intro-text p { font-size: 13px; }
+.crisis-content-wrap .crisis-timeline { margin: 0; }
+@media (min-width: 768px) {
+  .crisis-content-wrap { flex-direction: row; align-items: flex-start; gap: 32px; }
+  .crisis-content-wrap .crisis-video { flex: 0 0 45%; align-self: stretch; }
+  .crisis-content-wrap .crisis-video video { height: 100%; object-fit: cover; }
+  .crisis-content-wrap .crisis-timeline { flex: 1 1 55%; }
 }
 .crisis-timeline { margin: 32px 0; display: flex; flex-direction: column; gap: 0; }
 .ct-item { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
@@ -305,19 +304,19 @@ footer p { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.7; }
     <div class="fade-up">
       <span class="section-label" style="color:var(--secondary)">📋 April 2026</span>
       <h2 class="section-title">April 2026 <span class="red">Changed Everything</span></h2>
-      <div class="crisis-intro-wrap">
+      <div class="body-text">
+        <p>For more than 11 years, Omah Ogel operated from rented properties — caring for rescued dogs and cats who had nowhere else to go.</p>
+        <p>Then on <strong>April 4, 2026</strong>, everything changed.</p>
+      </div>
+
+      <div class="crisis-content-wrap">
         <div class="crisis-video">
           <video controls playsinline preload="metadata">
             <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780926878/lv_0_20260608205304_b0alkm.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="body-text crisis-intro-text">
-          <p>For more than 11 years, Omah Ogel operated from rented properties — caring for rescued dogs and cats who had nowhere else to go.</p>
-          <p>Then on <strong>April 4, 2026</strong>, everything changed.</p>
-        </div>
-      </div>
 
-      <div class="crisis-timeline">
+        <div class="crisis-timeline">
         <div class="ct-item">
           <div class="ct-dot red">⚠️</div>
           <div>
@@ -342,6 +341,7 @@ footer p { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.7; }
             <div class="ct-desc">Using years of personal savings, Amy purchased a 1,051 m² property in Bogor Regency — before a single donation was received. For the first time, Omah Ogel has land of its own.</div>
           </div>
         </div>
+      </div>
       </div>
 
       <div class="inline-cta">
