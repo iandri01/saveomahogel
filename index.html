@@ -114,6 +114,17 @@ section { padding: 72px 24px; }
 .crisis .section-title .red { color: #ff8a80; }
 .crisis .body-text { color: rgba(255,255,255,0.80); }
 .crisis .body-text strong { color: var(--secondary); }
+.crisis-intro-wrap { display: flex; flex-direction: column; gap: 24px; margin: 24px 0; }
+.crisis-intro-wrap .crisis-video { order: 1; }
+.crisis-intro-wrap .crisis-intro-text { order: 2; }
+.crisis-video { border-radius: 16px; overflow: hidden; }
+.crisis-video video { width: 100%; height: auto; display: block; border-radius: 16px; }
+@media (max-width: 767px) {
+  .crisis-intro-wrap { flex-direction: row; align-items: flex-start; gap: 16px; }
+  .crisis-intro-wrap .crisis-video { order: 1; flex: 0 0 40%; }
+  .crisis-intro-wrap .crisis-intro-text { order: 2; flex: 1 1 60%; }
+  .crisis-intro-wrap .crisis-intro-text p { font-size: 13px; }
+}
 .crisis-timeline { margin: 32px 0; display: flex; flex-direction: column; gap: 0; }
 .ct-item { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
 .ct-item:last-child { border: none; }
@@ -270,9 +281,9 @@ footer p { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.7; }
         190+ Rescued Animals<br>Need a <span class="orange">HOME.</span>
       </h1>
       <p class="hero-p">
-        We were given <strong>just six weeks</strong> to relocate nearly 190 rescued animals.<br><br>
+        We were given <strong style="color:#ff6b6b">just six weeks</strong> to relocate nearly 190 rescued animals.<br><br>
         After 11 years of rescue work, we finally have the opportunity to build a permanent sanctuary where they can live without fear of relocation or uncertainty.<br><br>
-        For the first time, they will have a place to call <strong>HOME.</strong>
+        For the first time, they will have a place to call <strong style="color:#ff6b6b">HOME.</strong>
       </p>
       <div class="hero-btns">
         <a href="https://www.gofundme.com/omahogel" target="_blank" class="btn-gofundme">❤️ Donate on GoFundMe</a>
@@ -294,15 +305,16 @@ footer p { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.7; }
     <div class="fade-up">
       <span class="section-label" style="color:var(--secondary)">📋 April 2026</span>
       <h2 class="section-title">April 2026 <span class="red">Changed Everything</span></h2>
-      <div class="body-text">
-        <p>For more than 11 years, Omah Ogel operated from rented properties — caring for rescued dogs and cats who had nowhere else to go.</p>
-        <p>Then on <strong>April 4, 2026</strong>, everything changed.</p>
-      </div>
-
-      <div class="crisis-video" style="margin:2rem 0; border-radius:16px; overflow:hidden;">
-        <video controls playsinline preload="metadata" style="width:100%; height:auto; display:block; border-radius:16px;">
-          <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780926878/lv_0_20260608205304_b0alkm.mp4" type="video/mp4">
-        </video>
+      <div class="crisis-intro-wrap">
+        <div class="crisis-video">
+          <video controls playsinline preload="metadata">
+            <source src="https://res.cloudinary.com/diylz44cu/video/upload/q_auto/f_auto/v1780926878/lv_0_20260608205304_b0alkm.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="body-text crisis-intro-text">
+          <p>For more than 11 years, Omah Ogel operated from rented properties — caring for rescued dogs and cats who had nowhere else to go.</p>
+          <p>Then on <strong>April 4, 2026</strong>, everything changed.</p>
+        </div>
       </div>
 
       <div class="crisis-timeline">
@@ -514,10 +526,6 @@ footer p { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.7; }
       <div class="support-item">
         <span class="si-icon">🛣️</span>
         <div><div class="si-title">Paving & Pathways</div><div class="si-desc">Internal pathways and paving blocks for safe animal movement</div></div>
-      </div>
-      <div class="support-item">
-        <span class="si-icon">🥩</span>
-        <div><div class="si-title">Frozen Food Storage</div><div class="si-desc">Dedicated cold storage room for frozen meat and food supplies</div></div>
       </div>
     </div>
     <div class="disclaimer">
